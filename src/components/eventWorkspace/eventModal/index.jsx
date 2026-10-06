@@ -13,7 +13,7 @@ const EventModal = ({ event: currentEvent, onClose, onSave }) => {
     .filter((guest) => guest.response === "Attending")
     .reduce((total, guest) => total + guest.partySize, 0) ?? 0;
   const [name, setName] = useState(currentEvent?.name ?? "");
-  const [category, setCategory] = useState(currentEvent?.category ?? "Dinner");
+  const [category, setCategory] = useState(currentEvent?.category ?? "Community dinner");
   const [date, setDate] = useState(currentEvent?.date ?? getDateAfterDays(7));
   const [time, setTime] = useState(currentEvent?.time ?? "18:30");
   const [venue, setVenue] = useState(currentEvent?.venue ?? "");
@@ -74,9 +74,10 @@ const EventModal = ({ event: currentEvent, onClose, onSave }) => {
             <label className={styles.field}>
               Event type
               <select value={category} onChange={(changeEvent) => setCategory(changeEvent.target.value)}>
-                <option>Dinner</option>
+                <option>Community dinner</option>
                 <option>Music</option>
                 <option>Workshop</option>
+                <option>Outdoor screening</option>
                 <option>Market</option>
                 <option>Social</option>
               </select>
