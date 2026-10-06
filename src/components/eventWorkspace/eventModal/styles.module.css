@@ -1,109 +1,146 @@
 .backdrop {
-  position: fixed;
-  z-index: 60;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 18px;
-  background: rgb(15 27 47 / 65%);
+    position: fixed;
+    z-index: 60;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    background: rgb(15 27 47 / 65%);
 }
 
 .modal {
-  width: min(100%, 560px);
-  max-height: min(92vh, 760px);
-  overflow: auto;
-  border: 1px solid var(--color-line);
-  border-radius: 14px;
-  background: var(--color-paper);
-  box-shadow: 0 24px 70px rgb(10 20 39 / 30%);
-
-  .modalHeader {
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    gap: 15px;
-    padding: 22px 24px 17px;
-    border-bottom: 1px solid var(--color-line);
-  }
-
-  h2 { font-size: 23px; font-weight: 750; }
-  .modalHeader p { margin-top: 4px; color: var(--color-muted); font-size: 13px; }
-
-  .closeButton {
-    display: grid;
-    width: 36px;
-    height: 36px;
-    flex: 0 0 auto;
-    place-items: center;
+    width: min(100%, 560px);
+    max-height: min(92vh, 760px);
+    overflow: auto;
     border: 1px solid var(--color-line);
-    border-radius: 7px;
-    background: white;
-    color: var(--color-ink);
-    font-size: 18px;
-    transition: border-color 150ms ease, box-shadow 150ms ease;
-  }
+    border-radius: 14px;
+    background: var(--color-paper);
+    box-shadow: 0 24px 70px rgb(10 20 39 / 30%);
 
-  .closeButton:hover { border-color: var(--color-blue); box-shadow: 0 3px 10px rgb(39 91 231 / 12%); }
+    .modalHeader {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 22px 24px 17px;
+        border-bottom: 1px solid var(--color-line);
+    }
 
-  .form { display: grid; gap: 15px; padding: 20px 24px 23px; }
+    h2 {
+        font-size: 23px;
+        font-weight: 750;
+    }
+    .modalHeader p {
+        margin-top: 4px;
+        color: var(--color-muted);
+        font-size: 13px;
+    }
 
-  .field {
-    display: grid;
-    gap: 6px;
-    color: #394962;
-    font-size: 12px;
-    font-weight: 700;
-  }
+    .closeButton {
+        display: grid;
+        width: 36px;
+        height: 36px;
+        flex: 0 0 auto;
+        place-items: center;
+        border: 1px solid var(--color-line);
+        border-radius: 7px;
+        background: white;
+        color: var(--color-ink);
+        font-size: 18px;
+        transition:
+            border-color 150ms ease,
+            box-shadow 150ms ease;
+    }
 
-  .field input,
-  .field select,
-  .field textarea {
-    width: 100%;
-    min-height: 42px;
-    padding: 9px 11px;
-    border: 1px solid #cfd8e6;
-    border-radius: 7px;
-    background: white;
-    outline-color: var(--color-blue);
-    font-size: 13px;
-  }
+    .closeButton:hover {
+        border-color: var(--color-blue);
+        box-shadow: 0 3px 10px rgb(39 91 231 / 12%);
+    }
 
-  .field textarea { min-height: 68px; resize: vertical; }
+    .form {
+        display: grid;
+        gap: 15px;
+        padding: 20px 24px 23px;
+    }
 
-  .fieldsTwo { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .field {
+        display: grid;
+        gap: 6px;
+        color: #394962;
+        font-size: 12px;
+        font-weight: 700;
+    }
 
-  .actions {
-    display: flex;
-    justify-content: end;
-    gap: 8px;
-    padding-top: 13px;
-    border-top: 1px solid var(--color-line);
-  }
+    .field input,
+    .field select,
+    .field textarea {
+        width: 100%;
+        min-height: 42px;
+        padding: 9px 11px;
+        border: 1px solid #cfd8e6;
+        border-radius: 7px;
+        background: white;
+        outline-color: var(--color-blue);
+        font-size: 13px;
+    }
 
-  .actions button {
-    min-height: 40px;
-    padding: 0 14px;
-    border: 1px solid var(--color-line);
-    border-radius: 7px;
-    background: white;
-    font-size: 12px;
-    font-weight: 700;
-    transition: border-color 150ms ease, box-shadow 150ms ease;
-  }
+    .field textarea {
+        min-height: 68px;
+        resize: vertical;
+    }
 
-  .actions button:hover { border-color: var(--color-blue); box-shadow: 0 3px 10px rgb(39 91 231 / 10%); }
+    .fieldsTwo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px;
+    }
 
-  .actions .saveButton {
-    border-color: var(--color-blue);
-    background: var(--color-blue);
-    color: white;
-  }
+    .actions {
+        display: flex;
+        justify-content: end;
+        gap: 8px;
+        padding-top: 13px;
+        border-top: 1px solid var(--color-line);
+    }
 
-  .actions .saveButton:hover { border-color: var(--color-blue-dark); box-shadow: 0 4px 13px rgb(39 91 231 / 20%); }
+    .actions button {
+        min-height: 40px;
+        padding: 0 14px;
+        border: 1px solid var(--color-line);
+        border-radius: 7px;
+        background: white;
+        font-size: 12px;
+        font-weight: 700;
+        transition:
+            border-color 150ms ease,
+            box-shadow 150ms ease;
+    }
 
-  @media (max-width: 520px) {
-    .modalHeader { padding: 19px 17px 15px; }
-    .form { padding: 17px; }
-    .fieldsTwo { grid-template-columns: 1fr; }
-  }
+    .actions button:hover {
+        border-color: var(--color-blue);
+        box-shadow: 0 3px 10px rgb(39 91 231 / 10%);
+    }
+
+    .actions .saveButton {
+        border-color: var(--color-blue);
+        background: var(--color-blue);
+        color: white;
+    }
+
+    .actions .saveButton:hover {
+        border-color: var(--color-blue-dark);
+        box-shadow: 0 4px 13px rgb(39 91 231 / 20%);
+    }
+
+    @media (max-width: 520px) {
+        .modalHeader {
+            padding: 19px 17px 15px;
+        }
+        .form {
+            padding: 17px;
+        }
+        .fieldsTwo {
+            grid-template-columns: 1fr;
+        }
+    }
 }
