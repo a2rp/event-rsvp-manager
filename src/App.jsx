@@ -1,3 +1,4 @@
+import { BackToTop } from "./components/backToTop/index.jsx";
 import { EventWorkspace } from "./components/eventWorkspace/index.jsx";
 import { SiteFooter } from "./components/siteFooter/index.jsx";
 import { SiteHeader } from "./components/siteHeader/index.jsx";
@@ -10,6 +11,7 @@ const App = () => (
       <EventWorkspace />
     </main>
     <SiteFooter />
+    <BackToTop />
   </div>
 );
 
