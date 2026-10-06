@@ -31,7 +31,7 @@ const SiteHeader = () => {
         .join(" ");
 
     return (
-        <header className={styles.header} id="top" ref={headerRef}>
+        <header className={styles.header} ref={headerRef}>
             <div className={styles.inner}>
                 <a className={styles.brand} href="#top" onClick={closeMenu}>
                     <span className={styles.brandMark}>
