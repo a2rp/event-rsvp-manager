@@ -9,16 +9,6 @@
     padding: 112px 0 64px;
   }
 
-  h1 {
-    font-size: 32px;
-    font-weight: 700;
-  }
-
-  p {
-    margin-top: 7px;
-    color: var(--color-muted);
-  }
-
   @media (max-width: 640px) {
     .pageContent {
       width: calc(100% - 28px);

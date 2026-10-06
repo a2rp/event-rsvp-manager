@@ -9,6 +9,9 @@ const getDateAfterDays = (days) => {
 };
 
 const EventModal = ({ event: currentEvent, onClose, onSave }) => {
+  const currentAttendingSeats = currentEvent?.guests
+    .filter((guest) => guest.response === "Attending")
+    .reduce((total, guest) => total + guest.partySize, 0) ?? 0;
   const [name, setName] = useState(currentEvent?.name ?? "");
   const [category, setCategory] = useState(currentEvent?.category ?? "Dinner");
   const [date, setDate] = useState(currentEvent?.date ?? getDateAfterDays(7));
@@ -36,7 +39,7 @@ const EventModal = ({ event: currentEvent, onClose, onSave }) => {
       venue: venue.trim(),
       capacity: Number(capacity),
       description: description.trim(),
-      image: currentEvent?.image ?? import.meta.env.BASE_URL + "images/event-cover.jpg",
+      image: currentEvent?.image ?? "",
       guests: currentEvent?.guests ?? [],
     });
   };
@@ -80,7 +83,7 @@ const EventModal = ({ event: currentEvent, onClose, onSave }) => {
             </label>
             <label className={styles.field}>
               Guest capacity
-              <input type="number" min="1" max="5000" required value={capacity} onChange={(changeEvent) => setCapacity(changeEvent.target.value)} />
+              <input type="number" min={Math.max(1, currentAttendingSeats)} max="5000" required value={capacity} onChange={(changeEvent) => setCapacity(changeEvent.target.value)} />
             </label>
             <label className={styles.field}>
               Date
