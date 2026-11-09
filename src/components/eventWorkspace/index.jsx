@@ -336,7 +336,13 @@ const EventWorkspace = () => {
         const csv = [headers, ...rows]
             .map((row) =>
                 row
-                    .map((cell) => '"' + String(cell).replace(/"/g, '""') + '"')
+                    .map((cell) => {
+                        const value = String(cell);
+                        const safeValue = /^[=+\-@]/.test(value.trimStart())
+                            ? `'${value}`
+                            : value;
+                        return '"' + safeValue.replace(/"/g, '""') + '"';
+                    })
                     .join(","),
             )
             .join("\r\n");
