@@ -35,7 +35,7 @@ const RsvpModal = ({ eventName, existingEmails, onClose, onSave }) => {
         });
         if (!saved)
             setError(
-                "This event has no seats left. Increase its capacity to add this guest.",
+                "This party is larger than the remaining capacity. Reduce the party size or increase the event capacity.",
             );
     };
 
